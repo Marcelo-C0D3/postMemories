@@ -24,8 +24,8 @@ class Header extends Component {
 const styles = StyleSheet.create({
     container: {
         marginTop: Platform.OS === 'ios' ? 20 : 0,
-        padding: 10,
-        borderBottomWidth: 1,
+        padding: 8,
+        borderBottomWidth: 0.7,
         borderColor: '#BBB',
     },
     rowContainer: {
@@ -40,8 +40,9 @@ const styles = StyleSheet.create({
     title: {
         color: '#000',
         fontFamily: 'shelter',
-        height: 30,
-        fontSize: 28
+        paddingLeft: 25,
+        height: 34,
+        fontSize: 26
     }
 })
 export default Header
