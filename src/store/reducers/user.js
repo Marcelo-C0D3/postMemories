@@ -33,7 +33,7 @@ const reducer = (state = initialState, action) => {
         case USER_LOADED:
             return {
                 ...state,
-                isLoading: true
+                isLoading: false
             }
         default:
             return state

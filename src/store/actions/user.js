@@ -88,17 +88,17 @@ export const login = user => {
                 if (res.data.localId) {
                     user.token = res.data.idToken
                     axios.get(`/users/${res.data.localId}.json`)
-                        .catch(err => {
+                    .then(res => {
+                        delete user.password
+                        user.name = res.data.name
+                        dispatch(userLogged(user))
+                        dispatch(userLoaded())
+                    })    
+                    .catch(err => {
                             dispatch(setMessage({
                                 title: 'Erro',
                                 text: 'Ocorreu um erro inesperado!'
                             }))
-                        })
-                        .then(res => {
-                            delete user.password
-                            user.name = res.data.name
-                            dispatch(userLogged(user))
-                            dispatch(userLoaded())
                         })
                 }
             })

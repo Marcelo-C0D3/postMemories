@@ -11,14 +11,15 @@ import {
 
 class Login extends Component {
     state = {
-        name: '',
-        email: '',
-        password: ''
+        name: 'juaum',
+        email: 'zzzzz@gmail.com',
+        password: '123456'
     }
 
     componentDidUpdate = prevProps => {
         if (prevProps.isLoading && !this.props.isLoading) {
             this.props.navigation.navigate('Profile')
+            this.props.navigation.navigate('Feed')
         }
     }
 
